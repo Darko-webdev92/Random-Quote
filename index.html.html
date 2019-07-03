@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Quote Machine </title>
+    <meta name="author" content="Darko Angelovski">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href=".css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            width: 100%;
+            height: 500px;
+        }
+        body {
+    background: black;
+}
+h1{
+    color: #fff;
+    font-family: "Times New Roman";
+    font-size: 50px;
+}
+p {
+    color: #fff;
+    font-family: "Times New Roman";
+    font-style: italic;
+    font-size: 20px;
+}
+img {
+    padding: 25px;
+    /*float: left;*/
+}
+button:hover {
+    /*outline: none;*/
+    cursor: pointer;
+    /*color: */
+}
+.quotes {
+    background-color: black;
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    border-color: #fff;
+    border-style: solid;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 20px;
+    height: auto;
+    color: #fff;
+
+}
+.quote {
+    font-size: 30px;
+}
+.author {
+    font-size: 20px;
+    font-style: italic;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="container-fluid text-center">
+        <h1>Random Quote Generator</h1>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <button class="btn btn-success btn-lg btn-block" id="btn" type="submit" style="margin: 50px 0;">New Quote</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="quotes text-center">
+                    <span class="quote" id="quote">Hello, quote</span> <br>
+                    <span class="author" id="author">-The World</span>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    
+     <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+   
+    <script>
+            let btn = document.getElementById('btn'),
+                quote = document.getElementById('quote'),
+    	        author = document.getElementById('author');
+           
+
+			var quotes = ["Only I can change my life.." , "There is only one happiness in this life, to love and be loved", "Life is 10% what happens to you and 90% how you react to it." , "Smile in the mirror.", "Infuse your life with action." , "Change your life today" ,"The greatest gift of life is friendship, and I have received it."];
+			var authors = ["Patricia Aakhus","Hans Aanrud", "Rachel Aaron", "Soazig Aaron", "Ben Aaronovitch", "Alexander Aaronsohn ", "Héctor Abad Faciolince"];
+
+			function changeQuote(){
+				var randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
+				var randomAuthors = authors[Math.floor(Math.random()*authors.length)];
+				quote.textContent = randomQuote;
+				author.textContent = randomAuthors;
+			}
+
+			function changeColor(){
+				var randomColor1 = Math.floor(Math.random()*256)
+				var randomColor2 = Math.floor(Math.random()*256)
+				var randomColor3 = Math.floor(Math.random()*256)
+				document.body.style.backgroundColor = 'rgb('+randomColor1+','+randomColor2+','+randomColor3+')';
+			}
+
+
+            btn.addEventListener('click', function(){
+                changeQuote();
+                changeColor();
+           });
+    </script>
+</body>
+</html>
